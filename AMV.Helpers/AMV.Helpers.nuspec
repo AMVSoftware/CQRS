@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AMV.Helpers</id>
+    <version>$version$</version>
+    <title>AMV.Helpers</title>
+    <authors>Max Vasilyev</authors>
+    <owners>AMV Software</owners>
+    <licenseUrl>http://www.amvsoftware.co.uk</licenseUrl>
+    <projectUrl>https://github.com/AMVSoftware/CQRS</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Collection of helper functions from AMV</description>
+    <releaseNotes>$releaseNotes$</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+  </metadata>
+  <files>
+    <file src="bin\Release\AMV.Helpers.pdb" target="lib/net451"/>
+    <file src="bin\Release\AMV.Helpers.dll" target="lib/net451"/>
+  </files>
+</package>
