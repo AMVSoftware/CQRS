@@ -8,9 +8,10 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AMV.CQRS.Web</RootNamespace>
-    <AssemblyName>AMV.CQRS.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AssemblyName>AMV.CQRS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +45,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\IAsyncCommand.cs" />
+    <Compile Include="Commands\IAsyncCommandHandler.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandHandler.cs" />
+    <Compile Include="Commands\LoggedAsyncCommandHandlerDecorator.cs" />
+    <Compile Include="Commands\LoggedCommandHandlerDecorator.cs" />
+    <Compile Include="Commands\TransactedAsyncCommandHandler.cs" />
+    <Compile Include="Commands\TransactedCommandAttribute.cs" />
+    <Compile Include="Commands\TransactedCommandHandler.cs" />
+    <Compile Include="DomainException.cs" />
+    <Compile Include="Events\DomainEvents.cs" />
+    <Compile Include="Events\IDomainEvent.cs" />
+    <Compile Include="Events\IDomainEventDispatcher.cs" />
+    <Compile Include="Events\IDomainEventHandler.cs" />
+    <Compile Include="IMediator.cs" />
+    <Compile Include="ISuspendExecutionStrategy.cs" />
+    <Compile Include="Logging\ILoggingService.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Logging\TraceLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\AllEntitiesAsyncQuery.cs" />
+    <Compile Include="Queries\AllEntitiesQuery.cs" />
+    <Compile Include="Queries\AsyncCachedQueryHandlerDecorator.cs" />
+    <Compile Include="Queries\CachedQueryHandlerDecorator.cs" />
+    <Compile Include="Queries\FindEntitiesQuery.cs" />
+    <Compile Include="Queries\FindEntityAsyncQuery.cs" />
+    <Compile Include="Queries\FindEntityQuery.cs" />
+    <Compile Include="Queries\IAsyncQuery.cs" />
+    <Compile Include="Queries\IAsyncQueryHandler.cs" />
+    <Compile Include="Queries\ICachedQuery.cs" />
+    <Compile Include="Queries\ICacheProvider.cs" />
+    <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Queries\IQueryHandler.cs" />
+    <Compile Include="Validators\ErrorList.cs" />
+    <Compile Include="Validators\IAsyncCommandValidator.cs" />
+    <Compile Include="Validators\ICommandValidator.cs" />
+    <Compile Include="Validators\NullObjectAsyncCommandValidator.cs" />
+    <Compile Include="Validators\NullObjectCommandValidator.cs" />
+    <Compile Include="Validators\ErrorMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
