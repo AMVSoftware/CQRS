@@ -7,8 +7,8 @@
     <ProjectGuid>{D0143CF7-6B97-4013-AE72-EEB1F00E3D8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AMV.CQRS.Web</RootNamespace>
-    <AssemblyName>AMV.CQRS</AssemblyName>
+    <RootNamespace>AMV.CQRS</RootNamespace>
+    <AssemblyName>AMV.CQRS.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

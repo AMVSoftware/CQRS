@@ -22,7 +22,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\AMV.Web.CQRS.pdb" target="lib/net451"/>
-    <file src="bin\Release\AMV.Web.CQRS.dll" target="lib/net451"/>
+    <file src="bin\Release\AMV.CQRS.Web.pdb" target="lib/net451"/>
+    <file src="bin\Release\AMV.CQRS.Web.dll" target="lib/net451"/>
   </files>
 </package>
