@@ -137,4 +137,28 @@ namespace AMV.Helpers
             return string.Equals(value, "true", StringComparison.InvariantCultureIgnoreCase);
         }
     }
+
+    // ReSharper disable once CheckNamespace
+    namespace System
+    {
+        public static class StringExtensions
+        {
+            public static bool IsNullOrEmpty(this String @string)
+            {
+                return String.IsNullOrEmpty(@string);
+            }
+
+            public static bool IsNullOrWhiteSpace(this String @string)
+            {
+                return String.IsNullOrWhiteSpace(@string);
+            }
+
+            public static string SafeSubstring(this string text, int start, int length)
+            {
+                return text.Length <= start ? ""
+                    : text.Length - start <= length ? text.Substring(start)
+                    : text.Substring(start, length);
+            }
+        }
+    }
 }
