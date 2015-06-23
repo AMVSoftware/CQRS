@@ -39,6 +39,10 @@
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -111,22 +115,21 @@
     <Compile Include="Helpers\BetterDefaultModelBinder.cs" />
     <Compile Include="Helpers\ConventionProvider.cs" />
     <Compile Include="Helpers\CssHelpers.cs" />
-    <Compile Include="Helpers\CustomJsonResult.cs" />
+    <Compile Include="Web\CustomJsonResult.cs" />
     <Compile Include="Helpers\EnumerableExtensions.cs" />
     <Compile Include="Helpers\EnumExtensions.cs" />
     <Compile Include="Helpers\HtmlExtensions.cs" />
     <Compile Include="Helpers\HttpRequestHelper.cs" />
     <Compile Include="Helpers\IgnoringAttachedFilesContractResolver.cs" />
     <Compile Include="Helpers\JsonHelpers.cs" />
-    <Compile Include="Helpers\ModelDeserializer.cs" />
     <Compile Include="Helpers\MvcHtmlStringExtensions.cs" />
     <Compile Include="Helpers\NoTrimAttribute.cs" />
-    <Compile Include="Helpers\RequreSecureConnectionFilter.cs" />
-    <Compile Include="Helpers\RouteValueDictionaryExtension.cs" />
+    <Compile Include="Web\RequreSecureConnectionFilter.cs" />
+    <Compile Include="Web\RouteValueDictionaryExtension.cs" />
     <Compile Include="Helpers\ScriptResourceExtensions.cs" />
-    <Compile Include="Helpers\Services\IServerPathService.cs" />
-    <Compile Include="Helpers\Services\ServerPathService.cs" />
-    <Compile Include="Helpers\Services\StubServerPathService.cs" />
+    <Compile Include="Services\IServerPathService.cs" />
+    <Compile Include="Services\ServerPathService.cs" />
+    <Compile Include="Services\StubServerPathService.cs" />
     <Compile Include="Helpers\SqlDateTimeModelBinder.cs" />
     <Compile Include="Helpers\StubHtmlHelper.cs" />
     <Compile Include="Queries\ICachedDropdownQuery.cs" />
