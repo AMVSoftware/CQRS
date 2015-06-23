@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AMV.CQRS")]
+[assembly: AssemblyTitle("AMV.CQRS.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AMV.CQRS")]
+[assembly: AssemblyProduct("AMV.CQRS.Web")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("def3cfd6-259f-4db1-92bf-550b66f3339f")]
+[assembly: Guid("396626ac-0c8c-4a41-8ac4-5a8926a14a27")]
 
 // Version information for an assembly consists of the following four values:
 //

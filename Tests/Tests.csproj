@@ -89,13 +89,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AMV.Helpers\AMV.Helpers.csproj">
+    <ProjectReference Include="..\AMV.Helpers\AMV.Helpers.csproj">
       <Project>{0ba33cda-1cce-4bdf-b46e-c2c32cd04038}</Project>
       <Name>AMV.Helpers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AMV.CQRS.csproj">
-      <Project>{d755fcbe-dbbd-4cc2-b2e5-e869c9d52294}</Project>
-      <Name>AMV.CQRS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
