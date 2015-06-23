@@ -162,6 +162,7 @@
     <Compile Include="Validators\ErrorMessage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AMV.CQRS.Web.nuspec" />
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
