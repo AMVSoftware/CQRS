@@ -6,7 +6,6 @@ using System.Linq;
 namespace AMV.CQRS
 {
     /// <summary>
-    /// ErrorList simply inherits List<IErrorMessage>
     /// It allows us to override ToString() so that we can debug error messages easily in tests 
     /// It provide a ToString implemenation for Error message and it will be included in ToString
     /// when called on ErrorList

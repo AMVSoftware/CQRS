@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMV.CQRS.Web", "AMV.CQRS.Web\AMV.CQRS.Web.csproj", "{D0143CF7-6B97-4013-AE72-EEB1F00E3D8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMV.CQRS", "AMV.CQRS\AMV.CQRS.csproj", "{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D0143CF7-6B97-4013-AE72-EEB1F00E3D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0143CF7-6B97-4013-AE72-EEB1F00E3D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0143CF7-6B97-4013-AE72-EEB1F00E3D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
