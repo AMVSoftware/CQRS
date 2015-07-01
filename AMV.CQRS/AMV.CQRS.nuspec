@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AMV.CQRS</id>
+    <version>$version$</version>
+    <title>AMV.CQRS</title>
+    <authors>Max Vasilyev</authors>
+    <owners>AMV Software</owners>
+    <licenseUrl>http://www.amvsoftware.co.uk</licenseUrl>
+    <projectUrl>https://github.com/AMVSoftware/CQRS</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CQRS classes for Web project</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <dependencies>
+      <dependency id="CommonServiceLocator" version="1.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\AMV.CQRS.pdb" target="lib/net451"/>
+    <file src="bin\Release\AMV.CQRS.dll" target="lib/net451"/>
+  </files>
+</package>

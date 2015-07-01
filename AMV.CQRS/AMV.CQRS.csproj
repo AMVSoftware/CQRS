@@ -62,6 +62,7 @@
     <Compile Include="Validators\NullObjectCommandValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AMV.CQRS.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
