@@ -14,7 +14,6 @@
     <copyright>Copyright 2015</copyright>
   </metadata>
   <files>
-    <file src="bin\Release\AMV.Helpers.pdb" target="lib/net451"/>
-    <file src="bin\Release\AMV.Helpers.dll" target="lib/net451"/>
+    <file src="bin\Release\AMV.Helpers.pdb" target="lib/net45"/>
   </files>
 </package>
