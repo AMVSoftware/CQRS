@@ -14,15 +14,14 @@
     <copyright>Copyright 2015</copyright>
     <dependencies>
       <dependency id="AMV.Helpers" version="$version$" />
-      <!--<dependency id="AutoMapper" version="3.3.1" />
+      <dependency id="AutoMapper" version="3.3.1" />
       <dependency id="CommonServiceLocator" version="1.3" />
       <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
       <dependency id="Newtonsoft.Json" version="6.0.0" />
-      <dependency id="T4MVCExtensions" version="3.15.4" />-->
+      <dependency id="T4MVCExtensions" version="3.15.4" />
     </dependencies>
   </metadata>
   <files>
     <file src="bin\Release\AMV.CQRS.Web.pdb" target="lib/net451"/>
-    <file src="bin\Release\AMV.CQRS.Web.dll" target="lib/net451"/>
   </files>
 </package>

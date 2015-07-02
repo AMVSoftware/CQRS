@@ -17,7 +17,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\AMV.CQRS.pdb" target="lib/net451"/>
-    <file src="bin\Release\AMV.CQRS.dll" target="lib/net451"/>
+    <file src="bin\Release\AMV.CQRS.pdb" target="lib/net45"/>
   </files>
 </package>
