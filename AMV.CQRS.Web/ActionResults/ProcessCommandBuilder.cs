@@ -63,7 +63,7 @@ namespace AMV.CQRS
 
             if (!String.IsNullOrEmpty(successMessage))
             {
-                tempData.Add("SuccessMessage", successMessage);
+                tempData["SuccessMessage"] = successMessage;
             }
 
             return success;
