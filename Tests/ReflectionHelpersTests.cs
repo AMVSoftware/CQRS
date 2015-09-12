@@ -172,6 +172,62 @@ namespace Tests
             result.Should().Be("Display");
         }
 
+
+
+        [Fact]
+        public void IsNullableEnum_OnNullableEnum_ReturnsTrue()
+        {
+            var field = typeof(FieldTesting).GetProperty("NullableEnum");
+            Assert.NotNull(field);
+
+            var result = field.PropertyType.IsNullableEnum();
+
+            result.Should().BeTrue();
+        }
+
+
+        [Fact]
+        public void IsNullableEnum_OnString_ReturnsFalse()
+        {
+            var field = typeof(FieldTesting).GetProperty("EmptyDescription");
+            Assert.NotNull(field);
+
+            var result = field.PropertyType.IsNullableEnum();
+
+            result.Should().BeFalse();
+        }
+
+
+        [Fact]
+        public void IsNullableEnum_OnNullableInt_ReturnsFalse()
+        {
+            var field = typeof(FieldTesting).GetProperty("NullableInteger");
+            Assert.NotNull(field);
+
+            var result = field.PropertyType.IsNullableEnum();
+
+            result.Should().BeFalse();
+        }
+
+        [Fact]
+        public void IsNullableEnum_OnEnum_ReturnsFalse()
+        {
+            var field = typeof(FieldTesting).GetProperty("RegularEnum");
+            Assert.NotNull(field);
+
+            var result = field.PropertyType.IsNullableEnum();
+
+            result.Should().BeFalse();
+        }
+
+
+
+        internal enum MyEnum
+        {
+            SomeValue = 2,
+            SomeOtherValue = 33,
+        }
+
         internal class FieldTesting
         {
             [Display(Name = "Display")]
@@ -185,9 +241,14 @@ namespace Tests
             [Description("")]
             public String EmptyDescription { get; set; }
 
+            public MyEnum RegularEnum { get; set; }
+
+            public MyEnum? NullableEnum { get; set; }
 
             [Display(Name = "")]
             public String EmptyDisplayName { get; set; }
+
+            public int? NullableInteger { get; set; }
         }
 
 

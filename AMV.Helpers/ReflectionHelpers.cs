@@ -126,5 +126,33 @@ namespace AMV.Helpers
 
             return implementingTypes;
         }
+
+
+        /// <summary>
+        /// Detects if the type is nullable or not. Shamelessly stolen from Automapper
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static bool IsNullableType(this Type type)
+        {
+            if (type.IsGenericType)
+            {
+                return type.GetGenericTypeDefinition().Equals(typeof(Nullable<>));
+            }
+            return false;
+        }
+
+
+        public static bool IsNullableEnum(this Type type)
+        {
+            if (type.IsNullableType())
+            {
+                var genericTypeDefinition = type.GetGenericArguments().First();
+
+                return genericTypeDefinition.IsEnum;
+            }
+
+            return false;
+        }
     }
 }
