@@ -88,11 +88,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionResults\ActionResultHelper.cs" />
+    <Compile Include="ActionResults\Async\CommandAsyncProcessorBuilderFactory.cs" />
+    <Compile Include="ActionResults\Async\ProcessAsyncCommandBuilder.cs" />
+    <Compile Include="ActionResults\CommandBuilderHelpers.cs" />
     <Compile Include="ActionResults\CommandProcessorBuilderFactory.cs" />
     <Compile Include="ActionResults\ExceptionHandler.cs" />
+    <Compile Include="ActionResults\JsonCommandInnerBuilder.cs" />
     <Compile Include="ActionResults\ModelStateExtensions.cs" />
     <Compile Include="ActionResults\ProcessCommandBuilder.cs" />
+    <Compile Include="ActionResults\Async\ProcessJsonAsyncCommandBuilder.cs" />
     <Compile Include="ActionResults\ProcessJsonCommandBuilder.cs" />
+    <Compile Include="ActionResults\Async\AsyncQueryResultBuilder.cs" />
     <Compile Include="ActionResults\QueryResultBuilder.cs" />
     <Compile Include="Commands\LoggedAsyncCommandHandlerDecorator.cs" />
     <Compile Include="Commands\LoggedCommandHandlerDecorator.cs" />

@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using AutoMapper;
 
 
 namespace AMV.CQRS
 {
-    public class QueryResultBuilder<TResult>
+    public class AsyncQueryResultBuilder<TResult>
     {
-        private readonly IQuery<TResult> query;
+        private readonly IAsyncQuery<TResult> query;
         private readonly ViewDataDictionary viewData;
         private readonly TempDataDictionary tempData;
         private readonly ViewEngineCollection viewEngineCollection;
@@ -17,7 +18,7 @@ namespace AMV.CQRS
         private bool doJson;
         private bool jsonAllowGet;
 
-        public QueryResultBuilder(IQuery<TResult> query, ViewDataDictionary viewData, TempDataDictionary tempData, ViewEngineCollection viewEngineCollection)
+        public AsyncQueryResultBuilder(IAsyncQuery<TResult> query, ViewDataDictionary viewData, TempDataDictionary tempData, ViewEngineCollection viewEngineCollection)
         {
             this.query = query;
             this.viewData = viewData;
@@ -27,14 +28,14 @@ namespace AMV.CQRS
         }
 
 
-        public QueryResultBuilder<TResult> MapTo<TDest>()
+        public AsyncQueryResultBuilder<TResult> MapTo<TDest>()
         {
             destinationType = typeof(TDest);
             return this;
         }
 
 
-        public QueryResultBuilder<TResult> DoJson(bool allowGet = false)
+        public AsyncQueryResultBuilder<TResult> DoJson(bool allowGet = false)
         {
             this.doJson = true;
             this.jsonAllowGet = allowGet;
@@ -42,15 +43,15 @@ namespace AMV.CQRS
         }
 
 
-        public static implicit operator ActionResult(QueryResultBuilder<TResult> processorBuilder)
+        public static implicit operator Task<ActionResult>(AsyncQueryResultBuilder<TResult> processorBuilder)
         {
             return processorBuilder.Build();
         }
 
 
-        public virtual ActionResult Build()
+        public virtual async Task<ActionResult> Build()
         {
-            var result = mediator.Request(query);
+            var result = await mediator.RequestAsync(query);
             Object resultingModel = result;
 
             if (destinationType != null)
