@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMV.Helpers", "AMV.Helpers\AMV.Helpers.csproj", "{0BA33CDA-1CCE-4BDF-B46E-C2C32CD04038}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMV.CQRS.Web", "AMV.CQRS.Web\AMV.CQRS.Web.csproj", "{D0143CF7-6B97-4013-AE72-EEB1F00E3D8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMV.CQRS", "AMV.CQRS\AMV.CQRS.csproj", "{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebSite", "SampleWebSite\SampleWebSite.csproj", "{8B6601AD-7721-4568-9BAF-B2A451367603}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2EA4FCA-2FE9-4229-B3F8-515D4CF47D10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B6601AD-7721-4568-9BAF-B2A451367603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B6601AD-7721-4568-9BAF-B2A451367603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B6601AD-7721-4568-9BAF-B2A451367603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B6601AD-7721-4568-9BAF-B2A451367603}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
