@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Practices.ServiceLocation;
 
 
@@ -57,10 +58,10 @@ namespace AMV.CQRS
         {
             var validator = container.GetInstance<ICommandValidator<TCommand>>();
 
-            var isValid = validator.IsValid(command);
-            if (!isValid)
+            var errors = validator.IsValid(command);
+            if (errors.IsValid())
             {
-                return validator.Errors;
+                return errors;
             }
 
             var handler = container.GetInstance<ICommandHandler<TCommand>>();
