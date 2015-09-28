@@ -59,7 +59,7 @@ namespace AMV.CQRS
             var validator = container.GetInstance<ICommandValidator<TCommand>>();
 
             var errors = validator.IsValid(command);
-            if (errors.IsValid())
+            if (!errors.IsValid())
             {
                 return errors;
             }
