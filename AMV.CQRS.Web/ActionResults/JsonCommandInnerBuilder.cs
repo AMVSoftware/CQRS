@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Web.Mvc;
 
 
@@ -42,7 +43,7 @@ namespace AMV.CQRS
             else
             {
 #if (DEBUG)
-                innerBuilder.ModelState.AddModelError("", "Unable to process command " + exception);
+                ModelState.AddModelError("", "Unable to process command " + exception);
 #else
                 ModelState.AddModelError("", "Unable to process command");
 #endif
@@ -60,7 +61,7 @@ namespace AMV.CQRS
 
             if (ReloadPage)
             {
-                TempData.Add("SuccessMessage", SuccessMessage);
+                AddSuccessMessage(SuccessMessage);
                 var reloadResult = new CustomJsonResult
                 {
                     Data = new
@@ -75,8 +76,7 @@ namespace AMV.CQRS
             var generatedRedirectUrl = CommandBuilderHelpers.GetRedirectUrl(RedirectUrl, RedirectTo, HtmlHelper);
             if (generatedRedirectUrl != null)
             {
-                // set TempData to have the message
-                TempData.Add("SuccessMessage", SuccessMessage);
+                AddSuccessMessage(SuccessMessage);
 
                 var redirectResult = new CustomJsonResult
                 {
@@ -105,8 +105,14 @@ namespace AMV.CQRS
                 return jsonResult;
             }
 
-
             return new HttpStatusCodeResult(201);
+        }
+
+
+        private void AddSuccessMessage(string successMessage)
+        {
+            var httpContextBase = HtmlHelper.ViewContext.RequestContext.HttpContext;
+            httpContextBase.Response.Cookies.Add(new HttpCookie("SuccessMessage", successMessage) { Path = "/", HttpOnly = false });
         }
     }
 }
