@@ -43,6 +43,10 @@
       <HintPath>..\packages\FluentAssertions.4.0.0\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -111,6 +115,7 @@
     <Compile Include="DateTimeExtensionsTests.cs" />
     <Compile Include="DictionaryExtensionsTests.cs" />
     <Compile Include="EnumExtensionsTests.cs" />
+    <Compile Include="MediatorTests.cs" />
     <Compile Include="ObjectExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionHelpersTests.cs" />
@@ -129,6 +134,10 @@
     <ProjectReference Include="..\AMV.CQRS.Web\AMV.CQRS.Web.csproj">
       <Project>{d0143cf7-6b97-4013-ae72-eeb1f00e3d8c}</Project>
       <Name>AMV.CQRS.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AMV.CQRS\AMV.CQRS.csproj">
+      <Project>{e2ea4fca-2fe9-4229-b3f8-515d4cf47d10}</Project>
+      <Name>AMV.CQRS</Name>
     </ProjectReference>
     <ProjectReference Include="..\AMV.Helpers\AMV.Helpers.csproj">
       <Project>{0ba33cda-1cce-4bdf-b46e-c2c32cd04038}</Project>

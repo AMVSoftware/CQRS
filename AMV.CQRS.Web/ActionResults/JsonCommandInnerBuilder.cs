@@ -53,7 +53,6 @@ namespace AMV.CQRS
 
         public ActionResult Handle()
         {
-
             if (JsonPayloadResult != null)
             {
                 return JsonPayloadResult;
