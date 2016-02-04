@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Practices.ServiceLocation;
 
 
 namespace AMV.CQRS
@@ -14,7 +13,7 @@ namespace AMV.CQRS
             this.container = container;
         }
 
-        public virtual TResponseData Request<TResponseData>(IQuery<TResponseData> query)
+        public TResponseData Request<TResponseData>(IQuery<TResponseData> query)
         {
             var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TResponseData));
             var handler = container.GetInstance(handlerType);

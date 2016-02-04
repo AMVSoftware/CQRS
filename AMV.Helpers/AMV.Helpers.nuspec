@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Collection of helper functions from AMV Software</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2015</copyright>
+    <copyright>Copyright 2016</copyright>
   </metadata>
   <files>
     <file src="bin\Release\AMV.Helpers.pdb" target="lib/net45"/>

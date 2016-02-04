@@ -1,7 +1,4 @@
-﻿using Microsoft.Practices.ServiceLocation;
-
-
-namespace AMV.CQRS
+﻿namespace AMV.CQRS
 {
     public class EventDispatcher : IDomainEventDispatcher
     {
