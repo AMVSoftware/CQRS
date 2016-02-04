@@ -14,7 +14,7 @@
     <copyright>Copyright 2016</copyright>
     <dependencies>
       <dependency id="AMV.Helpers" version="$version$" />
-      <dependency id="AutoMapper" version="[3, 4)" />
+      <dependency id="AutoMapper" version="4.0.0" />
       <dependency id="Microsoft.AspNet.Mvc" version="5.0.0" />
       <dependency id="Newtonsoft.Json" version="6.0.1" />
       <dependency id="T4MVCExtensions" version="3.0.0" />
