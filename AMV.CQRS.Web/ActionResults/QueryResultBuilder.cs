@@ -11,6 +11,7 @@ namespace AMV.CQRS
         private readonly ViewDataDictionary viewData;
         private readonly TempDataDictionary tempData;
         private readonly ViewEngineCollection viewEngineCollection;
+        private readonly IMapper mapper;
         private readonly IMediator mediator;
 
         private Type destinationType;
@@ -23,6 +24,7 @@ namespace AMV.CQRS
             this.viewData = viewData;
             this.tempData = tempData;
             this.viewEngineCollection = viewEngineCollection;
+            this.mapper = DependencyResolver.Current.GetService<IMapper>();
             mediator = DependencyResolver.Current.GetService<IMediator>();
         }
 
@@ -55,7 +57,7 @@ namespace AMV.CQRS
 
             if (destinationType != null)
             {
-                resultingModel = Mapper.Map(result, typeof(TResult), destinationType);
+                resultingModel = mapper.Map(result, typeof(TResult), destinationType);
             }
 
             if (doJson)
