@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 
@@ -10,18 +11,18 @@ namespace AMV.CQRS
         private readonly TCommand command;
         private readonly IMediator mediator;
         private readonly ModelStateDictionary modelState;
-        private readonly TempDataDictionary tempData;
+        private readonly HtmlHelper htmlHelper;
 
         private string successMessage;
         private ActionResult failure;
         private ActionResult success;
 
-        public ProcessAsyncCommandBuilder(TCommand command, ModelStateDictionary modelState, TempDataDictionary tempData, IMediator mediator)
+        public ProcessAsyncCommandBuilder(TCommand command, ModelStateDictionary modelState, IMediator mediator, HtmlHelper htmlHelper)
         {
             this.command = command;
             this.modelState = modelState;
-            this.tempData = tempData;
             this.mediator = mediator;
+            this.htmlHelper = htmlHelper;
         }
 
         public ProcessAsyncCommandBuilder<TCommand> SetRedirections(ActionResult failureAction, ActionResult successAction)
@@ -57,10 +58,16 @@ namespace AMV.CQRS
 
             if (!String.IsNullOrEmpty(successMessage))
             {
-                tempData["SuccessMessage"] = successMessage;
+                AddSuccessMessage(successMessage);
             }
 
             return success;
+        }
+
+        private void AddSuccessMessage(string message)
+        {
+            var httpContextBase = htmlHelper.ViewContext.RequestContext.HttpContext;
+            httpContextBase.Response.Cookies.Add(new HttpCookie("SuccessMessage", message) { Path = "/", HttpOnly = false });
         }
     }
 }

@@ -12,11 +12,10 @@ namespace AMV.CQRS
         public ProcessJsonAsyncCommandBuilder(TCommand command, 
                                               ModelStateDictionary modelState, 
                                               HtmlHelper htmlHelper, 
-                                              TempDataDictionary tempData, 
                                               IMediator mediator, 
                                               ILoggingService loggingService)
         {
-            innerBuilder = new JsonCommandInnerBuilder<TCommand>(command, modelState, htmlHelper, tempData, mediator, loggingService);
+            innerBuilder = new JsonCommandInnerBuilder<TCommand>(command, modelState, htmlHelper, mediator, loggingService);
         }
 
 

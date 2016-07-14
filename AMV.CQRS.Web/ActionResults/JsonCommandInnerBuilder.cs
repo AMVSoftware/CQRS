@@ -10,7 +10,6 @@ namespace AMV.CQRS
         public TCommand Command { get; private set; }
         public ModelStateDictionary ModelState { get; private set; }
         public HtmlHelper HtmlHelper { get; private set; }
-        public TempDataDictionary TempData { get; private set; }
         public IMediator Mediator { get; private set; }
         public ILoggingService LoggingService { get; private set; }
 
@@ -21,12 +20,11 @@ namespace AMV.CQRS
         public bool ReloadPage { get; set; }
 
 
-        public JsonCommandInnerBuilder(TCommand command, ModelStateDictionary modelState, HtmlHelper htmlHelper, TempDataDictionary tempData, IMediator mediator, ILoggingService loggingService)
+        public JsonCommandInnerBuilder(TCommand command, ModelStateDictionary modelState, HtmlHelper htmlHelper, IMediator mediator, ILoggingService loggingService)
         {
             this.Command = command;
             this.ModelState = modelState;
             this.HtmlHelper = htmlHelper;
-            this.TempData = tempData;
             this.Mediator = mediator;
             this.LoggingService = loggingService;
         }

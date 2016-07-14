@@ -10,15 +10,13 @@ namespace AMV.CQRS
         private readonly IMediator mediator;
         private readonly ILoggingService loggingService;
         private readonly ModelStateDictionary modelState;
-        private readonly TempDataDictionary tempData;
 
 
-        public CommandProcessorBuilderFactory(TCommand command, HtmlHelper htmlHelper, ModelStateDictionary modelState, TempDataDictionary tempData)
+        public CommandProcessorBuilderFactory(TCommand command, HtmlHelper htmlHelper, ModelStateDictionary modelState)
         {
             this.command = command;
             this.htmlHelper = htmlHelper;
             this.modelState = modelState;
-            this.tempData = tempData;
             mediator = DependencyResolver.Current.GetService<IMediator>();
             loggingService = DependencyResolver.Current.GetService<ILoggingService>();
         }
@@ -26,7 +24,7 @@ namespace AMV.CQRS
 
         public ProcessCommandBuilder<TCommand> DoRedirects(ActionResult failure, ActionResult success)
         {
-            var processCommandBuilder = new ProcessCommandBuilder<TCommand>(command, modelState, tempData, mediator).SetRedirections(failure, success);
+            var processCommandBuilder = new ProcessCommandBuilder<TCommand>(command, modelState, mediator, htmlHelper).SetRedirections(failure, success);
 
             return processCommandBuilder;
         }
@@ -34,7 +32,7 @@ namespace AMV.CQRS
 
         public ProcessJsonCommandBuilder<TCommand> DoJsonValidation()
         {
-            var jsonCommandBuilder = new ProcessJsonCommandBuilder<TCommand>(command, modelState, htmlHelper, tempData, mediator, loggingService);
+            var jsonCommandBuilder = new ProcessJsonCommandBuilder<TCommand>(command, modelState, htmlHelper, mediator, loggingService);
 
             return jsonCommandBuilder;
         }
